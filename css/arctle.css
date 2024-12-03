@@ -1,0 +1,131 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 0.25em !important;
+  box-sizing: border-box;
+  margin-top: 0 !important;
+}
+
+h1 {
+  color: #d20f39 !important;
+}
+
+h2 {
+  color: #fe640c !important;
+}
+
+h3 {
+  color: #40a02b !important;
+}
+
+h4 {
+  color: #169299 !important;
+}
+
+h5 {
+  color: #7287fd !important;
+}
+
+h6 {
+  color: #8839ef !important;
+}
+
+.MathJax {
+  color: #e1b0ac;
+  text-align: left !important;
+}
+
+.latex-box {
+  display: flex;
+  P {
+    flex: 1;
+  }
+}
+
+.markdown-body {
+  overflow: hidden;
+}
+
+/* .markdown-body ol,
+.markdown-body ul {
+  padding-left: 0 !important;
+} */
+
+/* 块引用 */
+/* .markdown-body blockquote {
+  background-color: #eaf7d6;
+  color: #659818;
+
+  border: 0;
+  border-radius: 0.15em;
+  padding: 0.5em 1em;
+  font {
+    font-weight: bold;
+  }
+} */
+
+/* mark标签样式 */
+.mark,
+mark {
+  display: block;
+  margin: 1em 0;
+  background-color: #faeed0;
+  color: #ea9c14;
+  border-radius: 0.25em;
+  padding: 0.625em !important;
+  line-height: 1.6em;
+}
+
+hr,
+.markdown-body hr {
+  border: none;
+}
+
+table {
+  width: 100%; /*表格宽度*/
+  display: inline-table !important;
+  border: 1px solid #dedede; /*表格外边框设置*/
+  border-collapse: collapse; /*使用单一线条的边框*/
+}
+
+table th {
+  font-weight: bold; /*加粗*/
+  text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  background-color: rgba(158, 188, 226, 0.2) !important; /*背景色*/
+}
+
+table tr:hover {
+  background-color: #efefef !important;
+}
+
+embed {
+  width: 100%;
+}
+.markdown-body .btn {
+  background-color: #2f4154;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: none;
+  display: inline-block;
+  font-size: 0.875em;
+  line-height: 2;
+  padding: 0 0.75rem;
+  transition-property: background;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-bottom: 1rem;
+  &:hover {
+    background-color: #23ae92;
+    text-decoration: none;
+  }
+}
+
+img {
+  margin: 1.5rem 0 !important;
+}
