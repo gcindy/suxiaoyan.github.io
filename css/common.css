@@ -1,0 +1,87 @@
+img {
+  margin: 1.5rem 0 !important;
+}
+
+embed {
+  width: 100%;
+}
+
+/* hr,
+.markdown-body hr {
+  border: none;
+} */
+
+table {
+  width: 100%; /*表格宽度*/
+  display: inline-table !important;
+  border: 1px solid #dedede; /*表格外边框设置*/
+  border-collapse: collapse; /*使用单一线条的边框*/
+}
+
+table th {
+  font-weight: bold; /*加粗*/
+  text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  background-color: rgba(158, 188, 226, 0.2) !important; /*背景色*/
+}
+
+table tr:hover {
+  background-color: #efefef !important;
+}
+
+.markdown-body {
+  overflow: hidden;
+}
+
+.latex-box {
+  display: flex;
+  P {
+    flex: 1;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-bottom: 0.5em !important;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.col-lg-2 {
+  max-width: 10% !important;
+  flex: inherit;
+}
+
+/*
+.container {
+  max-width: 80% !important;
+} */
+
+.markdown-body .col-lg-8 {
+  flex: inherit !important;
+  max-width: 100% !important;
+}
+
+.markdown-body .row {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}

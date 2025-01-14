@@ -1,0 +1,945 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="爱吃糖醋排骨的苏小妍.">
+  <meta name="keywords" content="代码笔墨">
+  
+    <meta name="description" content="基础  array.concat(arr1) \(\Rightarrow\) 连接两个或多个数组，并返回已连接数组的副本  12345const arrConcat &#x3D; (arr, arr1) &#x3D;&gt; &#123;  console.log(&quot;arrConcat&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;&gt;&gt;&quot;, arr.concat(arr1));&#125;;&#x2F;&#x2F; [ &#x27;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js之Array的使用">
+<meta property="og:url" content="https://www.gongyibai.site/Array/index.html">
+<meta property="og:site_name" content="代码笔墨">
+<meta property="og:description" content="基础  array.concat(arr1) \(\Rightarrow\) 连接两个或多个数组，并返回已连接数组的副本  12345const arrConcat &#x3D; (arr, arr1) &#x3D;&gt; &#123;  console.log(&quot;arrConcat&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;&gt;&gt;&quot;, arr.concat(arr1));&#125;;&#x2F;&#x2F; [ &#x27;a">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-27T01:39:40.000Z">
+<meta property="article:modified_time" content="2024-12-16T08:00:28.325Z">
+<meta property="article:author" content="爱吃糖醋排骨的苏小妍.">
+<meta property="article:tag" content="web前端">
+<meta property="article:tag" content="javaScript">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>js之Array的使用 - 代码笔墨</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.gongyibai.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>代码笔墨</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于我</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="js之Array的使用"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        爱吃糖醋排骨的苏小妍.
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-27 09:39" pubdate>
+          2024,11,27 09:39
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">js之Array的使用</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2024-12-16T16:00:28+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="基础">基础</h1>
+<ul>
+<li>array.concat(arr1) <span class="math inline">\(\Rightarrow\)</span>
+连接两个或多个数组，并返回已连接数组的副本</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">arrConcat</span> = (<span class="hljs-params">arr, arr1</span>) =&gt; &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arrConcat=====&gt;&gt;&gt;&quot;</span>, arr.<span class="hljs-title function_">concat</span>(arr1));<br>&#125;;<br><span class="hljs-comment">// [ &#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;pears&#x27; ]</span><br><span class="hljs-title function_">arrConcat</span>([<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>], [<span class="hljs-string">&quot;pears&quot;</span>]);<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.copyWithin(num1,num2)：将数组中的数组元素复制到指定位置或从指定位置复制</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">copyWithinArray</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;, &#x27;Orange&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arrConcat=====&gt;&gt;&gt;&quot;</span>, fruits.<span class="hljs-title function_">copyWithin</span>(<span class="hljs-number">3</span>, <span class="hljs-number">1</span>));<br>&#125;;<br><br><span class="hljs-title function_">copyWithinArray</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.fill(修改的数据，开始索引，结束索引)：填充数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">fillArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> milkArr = [<span class="hljs-string">&quot;蒙牛&quot;</span>, <span class="hljs-string">&quot;娃哈哈&quot;</span>, <span class="hljs-string">&quot;AD钙奶&quot;</span>, <span class="hljs-string">&quot;优酸乳&quot;</span>, <span class="hljs-string">&quot;伊利&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;蒙牛&#x27;, &#x27;娃哈哈&#x27;, &#x27;AD钙奶&#x27;, &#x27;优酸乳&#x27;, &#x27;伊利&#x27; ]</span><br>  milkArr.<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>);<br>  <span class="hljs-comment">// [ &#x27;蒙牛&#x27;, &#x27;娃哈哈&#x27;, &#x27;Kiwi&#x27;, &#x27;优酸乳&#x27;, &#x27;伊利&#x27; ]</span><br>  milkArr.<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br>  <span class="hljs-comment">// [ &#x27;蒙牛&#x27;, &#x27;娃哈哈&#x27;, &#x27;Kiwi&#x27;, &#x27;Kiwi&#x27;, &#x27;伊利&#x27; ]</span><br>  milkArr.<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);<br>  <span class="hljs-comment">// [ &#x27;蒙牛&#x27;, &#x27;娃哈哈&#x27;, &#x27;Kiwi&#x27;, &#x27;Kiwi&#x27;, &#x27;Kiwi&#x27; ]</span><br>  milkArr.<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>);<br>  <span class="hljs-comment">// [ &#x27;蒙牛&#x27;, &#x27;娃哈哈&#x27;, &#x27;Kiwi&#x27;, &#x27;Kiwi&#x27;, &#x27;Kiwi&#x27; ]</span><br>  milkArr.<span class="hljs-title function_">fill</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>);<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(milkArr);<br>&#125;;<br><span class="hljs-title function_">filterArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Array.from(转为数组的对象)创建数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">arrayFrom</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-comment">// [&#x27;f&#x27;, &#x27;o&#x27;, &#x27;o&#x27;, &#x27;d&#x27;]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(<span class="hljs-string">&quot;food&quot;</span>));<br>  <span class="hljs-comment">// [2, 4, 6, 8]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> x + x));<br>  <span class="hljs-comment">// [0, 1, 2, 3, 4, 5, 6]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: <span class="hljs-number">7</span> &#125;, <span class="hljs-function">(<span class="hljs-params">v, i</span>) =&gt;</span> i));<br>&#125;;<br><span class="hljs-title function_">arrayFrom</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.join(链接条件)：将数组合并成字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">arrayJoin</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<br>    <span class="hljs-string">&quot;Banana&quot;</span>,<br>    <span class="hljs-string">&quot;Cherry&quot;</span>,<br>    <span class="hljs-string">&quot;Peach&quot;</span>,<br>    <span class="hljs-string">&quot;Kiwi&quot;</span>,<br>    <span class="hljs-string">&quot;Leamon&quot;</span>,<br>    <span class="hljs-string">&quot;Watermelon&quot;</span>,<br>    <span class="hljs-string">&quot;Strawberry&quot;</span>,<br>    <span class="hljs-string">&quot;Orange&quot;</span>,<br>    <span class="hljs-string">&quot;Apple&quot;</span>,<br>    <span class="hljs-string">&quot;Mango&quot;</span>,<br>    <span class="hljs-string">&quot;Banana&quot;</span>,<br>  ];<br>  <span class="hljs-comment">// Banana-Cherry-Peach-Kiwi-Leamon-Watermelon-Strawberry-Orange-Apple-Mango-Banana</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;-&quot;</span>));<br>  <span class="hljs-comment">// Banana And Cherry And Peach And Kiwi And Leamon And Watermelon And Strawberry And Orange And Apple And Mango And Banana</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot; And &quot;</span>));<br>  <span class="hljs-comment">// Banana Cherry Peach Kiwi Leamon Watermelon Strawberry Orange Apple Mango Banana</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot; &quot;</span>));<br>  <span class="hljs-comment">// Banana / Cherry / Peach / Kiwi / Leamon / Watermelon / Strawberry / Orange / Apple / Mango / Banana</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot; / &quot;</span>));<br>&#125;<br><span class="hljs-title function_">arrayJoin</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.toString()：转为字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">ArrayToString</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// Banana,Orange,Apple,Mango</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsAr1r=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">toString</span>());<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Array.isArray(arr)：arr 是否为数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isArray</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>, <span class="hljs-string">&quot;Peach&quot;</span>, <span class="hljs-string">&quot;Kiwi&quot;</span>];<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(fruitsArr));<br>  <span class="hljs-comment">// false</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(&#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;sss&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">13</span> &#125;));<br>&#125;<br><span class="hljs-title function_">isArray</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.valueOf()：输出原数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">valueOfArray</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>, <span class="hljs-string">&quot;Peach&quot;</span>, <span class="hljs-string">&quot;Kiwi&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;Banana&#x27;, &#x27;Cherry&#x27;, &#x27;Peach&#x27;, &#x27;Kiwi&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruitsArr=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">valueOf</span>());<br>&#125;;<br><span class="hljs-title function_">valueOfArray</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.pop()：删除最后一个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// 删除项：Mango</span><br>  <span class="hljs-comment">// 数组：[&#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;pop=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">pop</span>());<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.shift()：删除第一个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// Banana</span><br>  <span class="hljs-comment">// 数组：[ &#x27;Orange&#x27;, &#x27;Apple&#x27;,&#x27;Mango&#x27;]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;shift=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">shift</span>());<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.unshift()：向数组开头添加一个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;Kiwi&#x27;, &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;, &#x27;Mango&#x27; ];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;unshift=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&quot;Kiwi&quot;</span>));<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.push()：向数组末尾添加一个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;, &#x27;Mango&#x27;, &#x27;Leamon&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;push=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Leamon&quot;</span>), fruitsArr);<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.splice()：向数组添加 / 删除元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// 删除项：Mango</span><br>  <span class="hljs-comment">// 数组：[&#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;pop=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">pop</span>());<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.slice(开始索引，结束索引)：截取数组，并返回一个新数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>, <span class="hljs-string">&quot;Leamon&quot;</span>];<br>  <span class="hljs-comment">// [ &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;, &#x27;Mango&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;slice=====&gt;&gt;&gt;&quot;</span>, fruitsArr.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>));<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.splice()：向数组添加 / 删除元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>	<span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&#x27;Kiwi&#x27;</span>, <span class="hljs-string">&#x27;Banana&#x27;</span>, <span class="hljs-string">&#x27;Orange&#x27;</span>, <span class="hljs-string">&#x27;Apple&#x27;</span>, <span class="hljs-string">&#x27;Mango&#x27;</span>, <span class="hljs-string">&#x27;Leamon&#x27;</span>];<br>	<span class="hljs-comment">/* 在index = 2时，添加一个，名叫Watermelon的元素 */</span><br>	fruitsArr.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&#x27;Watermelon&#x27;</span>);<br><br>	<span class="hljs-comment">// [&#x27;Kiwi&#x27;, &#x27;Banana&#x27;, &#x27;Watermelon&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;, &#x27;Mango&#x27;, &#x27;Leamon&#x27;]</span><br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;splice=====&gt;&gt;&gt;&#x27;</span>, fruitsArr, arr);<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>, <span class="hljs-string">&quot;Lemon&quot;</span>];<br>  <span class="hljs-comment">/* 在index = 2时，删除一个元素并添加两个元素 */</span><br>  <span class="hljs-keyword">const</span> arr = fruitsArr.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;Watermelon&quot;</span>, <span class="hljs-string">&quot;Peach&quot;</span>);<br><br>  <span class="hljs-comment">// [&#x27;Kiwi&#x27;, &#x27;Banana&#x27;, &#x27;Watermelon&#x27;, &#x27;Peach&#x27;, &#x27;Apple&#x27;, &#x27;Mango&#x27;, &#x27;Lemon&#x27;];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;splice=====&gt;&gt;&gt;filterArr&quot;</span>, fruitsArr);<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">dealArrays</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruitsArr = [<span class="hljs-string">&quot;Kiwi&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>, <span class="hljs-string">&quot;Lemon&quot;</span>];<br>  <span class="hljs-comment">/* 在index = 3时，删除两个元素 */</span><br>  fruitsArr.<span class="hljs-title function_">splice</span>(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>);<br>  <span class="hljs-comment">// [ &#x27;Kiwi&#x27;, &#x27;Banana&#x27;, &#x27;Orange&#x27;, &#x27;Lemon&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;splice=====&gt;&gt;&gt;&quot;</span>, fruitsArr);<br>&#125;;<br><span class="hljs-title function_">dealArrays</span>();<br></code></pre></td></tr></table></figure>
+<h1 id="迭代">迭代</h1>
+<h2 id="循环">循环</h2>
+<ul>
+<li>array.forEach(项目值，项目索引，数组本身)：循环数组，不会更改原来的数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">forEachArr</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> colorArr = [<span class="hljs-string">&quot;Red&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Blue&quot;</span>, <span class="hljs-string">&quot;Purple&quot;</span>];<br>  <span class="hljs-keyword">const</span> arr = [];<br>  colorArr.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">value, index, array</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// 当前数据</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;val=====&gt;&gt;&gt;&quot;</span>, value);<br>    <span class="hljs-comment">// 当前index</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;index=====&gt;&gt;&gt;&quot;</span>, index);<br>    <span class="hljs-comment">// 当前数组</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;array=====&gt;&gt;&gt;&quot;</span>, array);<br><br>    <span class="hljs-keyword">if</span> (value == <span class="hljs-string">&quot;Red&quot;</span>) &#123;<br>      <span class="hljs-comment">// console.log(&#x27;1=====&gt;&gt;&gt;&#x27;);</span><br>      value = <span class="hljs-string">&quot;Bananas&quot;</span>;<br>    &#125;<br>    arr.<span class="hljs-title function_">push</span>(value);<br>  &#125;);<br>  <span class="hljs-comment">// [ &#x27;Bananas&#x27;, &#x27;Orange&#x27;, &#x27;Blue&#x27;, &#x27;Purple&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);<br>&#125;<br><span class="hljs-title function_">forEachArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.map(项目值，项目索引，数组本身)：循环数组，会更改原来的数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">mapArr</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> colorArr = [<span class="hljs-string">&quot;Red&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Blue&quot;</span>, <span class="hljs-string">&quot;Purple&quot;</span>];<br><br>  <span class="hljs-keyword">const</span> arr = colorArr.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">value, index, array</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// 当前数据</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;val=====&gt;&gt;&gt;&quot;</span>, value);<br>    <span class="hljs-comment">// 当前index</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;index=====&gt;&gt;&gt;&quot;</span>, index);<br>    <span class="hljs-comment">// 当前数组</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;array=====&gt;&gt;&gt;&quot;</span>, array);<br>    <span class="hljs-keyword">if</span> (value == <span class="hljs-string">&quot;Orange&quot;</span>) &#123;<br>      value = <span class="hljs-string">&quot;哈哈哈&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> value;<br>  &#125;);<br>  <span class="hljs-comment">// [ &#x27;Red&#x27;, &#x27;哈哈哈&#x27;, &#x27;Blue&#x27;, &#x27;Purple&#x27; ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);<br>&#125;<br><span class="hljs-title function_">mapArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.filter(项目值)：过滤数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">filterArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> milkArr = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">18</span>, <span class="hljs-number">16</span>, <span class="hljs-number">12</span>, <span class="hljs-number">54</span>, <span class="hljs-number">4</span>, <span class="hljs-number">33</span>];<br>  <span class="hljs-keyword">const</span> arr = milkArr.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> value &gt; <span class="hljs-number">8</span>;<br>  &#125;);<br>  <span class="hljs-comment">// [ 10, 20, 30, 18,16, 12, 54, 33 ]</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);<br>&#125;;<br><br><span class="hljs-title function_">filterArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.reduce()：对数据进行运算处理</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">reduceArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: <span class="hljs-number">21</span> &#125;, <span class="hljs-function">(<span class="hljs-params">v, i</span>) =&gt;</span> i);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-keyword">const</span> arr1 = numArr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, e, index, arr</span>) =&gt;</span> e &gt; <span class="hljs-number">10</span>);<br><br>  <span class="hljs-keyword">const</span> arr2 = numArr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, e</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;acc=====&gt;&gt;&gt;&quot;</span>, acc);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;e=====&gt;&gt;&gt;&quot;</span>, e);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;hhh=====&gt;&gt;&gt;&quot;</span>, e - acc);<br>    <span class="hljs-keyword">return</span> e - acc &gt; <span class="hljs-number">10</span>;<br>  &#125;);<br>  <span class="hljs-comment">// false</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr=====&gt;&gt;&gt;&quot;</span>, arr1);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr=====&gt;&gt;&gt;&quot;</span>, arr2);<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/images/202402271644542.png" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>array.every(项目值,项目索引，项目本身)：检查数组中的所有元素是否都通过了测试（返回
+true / false ）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">arrEvery</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>];<br><br>  <span class="hljs-keyword">const</span> arr1 = numArr.<span class="hljs-title function_">every</span>(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr1=====&gt;&gt;&gt;e&quot;</span>, e);<br>    <span class="hljs-keyword">return</span> e * <span class="hljs-number">3</span> &gt; <span class="hljs-number">10</span>;<br>  &#125;);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr1);<br><br>  <span class="hljs-keyword">const</span> arr2 = numArr.<span class="hljs-title function_">every</span>(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr2=====&gt;&gt;&gt;e&quot;</span>, e);<br>    <span class="hljs-keyword">return</span> (e = <span class="hljs-number">10</span>);<br>  &#125;);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);<br>&#125;;<br><span class="hljs-title function_">arrEvery</span>();<br></code></pre></td></tr></table></figure>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/images/202402270926637.png" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>array.some(项目值,项目索引，项目本身)：检查数组中的所有元素是否都通过了测试（返回
+true / false ）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">arrSome</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>];<br>  <span class="hljs-keyword">const</span> arr1 = numArr.<span class="hljs-title function_">some</span>(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> e * <span class="hljs-number">3</span> &gt; <span class="hljs-number">10</span>);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr1);<br><br>  <span class="hljs-keyword">const</span> arr2 = numArr.<span class="hljs-title function_">some</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value &gt; <span class="hljs-number">40</span>);<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);<br>&#125;<br><span class="hljs-title function_">arrSome</span>();<br></code></pre></td></tr></table></figure>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/images/202402270931261.png" srcset="/img/loading.gif" lazyload /></p>
+<blockquote>
+<p>[!note] every：有一个不符合条件就停止循环<br/>
+some：一直循环到符合条件为止</p>
+</blockquote>
+<h2 id="查找元素">查找元素</h2>
+<ul>
+<li>array.indexOf(val)：在数组中搜索元素并返回其位置，找不到返回-1</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">indexOfArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>, <span class="hljs-number">10</span>];<br>  <span class="hljs-comment">// 3</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;numArr=====&gt;&gt;&gt;&quot;</span>, numArr.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">10</span>));<br>  <span class="hljs-comment">// -1</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;numArr=====&gt;&gt;&gt;&quot;</span>, numArr.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">15</span>));<br>&#125;;<br><span class="hljs-title function_">indexOfArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.lastIndexOf(val)：在数组中搜索元素出现的最后一次并返回其位置，找不到返回-1</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">lastIndexOfArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>, <span class="hljs-number">10</span>];<br>  <span class="hljs-comment">// 11</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;numArr=====&gt;&gt;&gt;&quot;</span>, numArr.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-number">10</span>));<br>  <span class="hljs-comment">// 1</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;numArr=====&gt;&gt;&gt;&quot;</span>, numArr.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-number">5</span>));<br>  <span class="hljs-comment">// -1</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;numArr=====&gt;&gt;&gt;&quot;</span>, numArr.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-number">9</span>));<br>&#125;;<br><span class="hljs-title function_">lastIndexOfArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.find(val)：返回符合条件的<font color="#ff5353">元素</font>，没有符合的返回
+undefined</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">findArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>, <span class="hljs-number">10</span>];<br><br>  <span class="hljs-keyword">const</span> isLargeNumber = numArr.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;ele=====&gt;&gt;&gt;&quot;</span>, element);<br>    <span class="hljs-keyword">return</span> element &gt; <span class="hljs-number">8</span>;<br>  &#125;);<br>  <span class="hljs-comment">// 10</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;isLargeNumber=====&gt;&gt;&gt;&quot;</span>, isLargeNumber);<br><br>  <span class="hljs-keyword">const</span> isSmallerNumber = numArr.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;ele=====&gt;&gt;&gt;&quot;</span>, element);<br>    <span class="hljs-keyword">return</span> element &lt; <span class="hljs-number">4</span>;<br>  &#125;);<br>  <span class="hljs-comment">// undefined</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;isSmallerNumber=====&gt;&gt;&gt;&quot;</span>, isSmallerNumber);<br>&#125;;<br><span class="hljs-title function_">findArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.findIndex(val)：返回符合条件的<font color="#ff5353">个数</font>，没有符合的返回-1</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">findIndexArr</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> numArr = [<span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">42</span>, <span class="hljs-number">54</span>, <span class="hljs-number">10</span>];<br>  <span class="hljs-comment">/* 比对是否有比10更大的数字 */</span><br>  <span class="hljs-keyword">const</span> isLargeNumber = numArr.<span class="hljs-title function_">findIndex</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;ele=====&gt;&gt;&gt;&quot;</span>, element);<br>    <span class="hljs-keyword">return</span> element &gt; <span class="hljs-number">10</span>;<br>  &#125;);<br>  <span class="hljs-comment">// 4</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;isLargeNumber=====&gt;&gt;&gt;&quot;</span>, isLargeNumber);<br>  <span class="hljs-comment">/* 比对是否有比4更小的数字 */</span><br>  <span class="hljs-keyword">const</span> isSmallerNumber = numArr.<span class="hljs-title function_">findIndex</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;ele=====&gt;&gt;&gt;&quot;</span>, element);<br>    <span class="hljs-keyword">return</span> element &lt; <span class="hljs-number">4</span>;<br>  &#125;);<br>  <span class="hljs-comment">// -1</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;isSmallerNumber=====&gt;&gt;&gt;&quot;</span>, isSmallerNumber);<br>&#125;;<br><span class="hljs-title function_">findIndexArr</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>array.includes(查找元素, 开始位置)：检测数组是否包含指定的元素。返回
+True / False</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">arrayIncludesStr</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> fruitsArr = [<br>    <span class="hljs-string">&quot;Banana&quot;</span>,<br>    <span class="hljs-string">&quot;Cherry&quot;</span>,<br>    <span class="hljs-string">&quot;Peach&quot;</span>,<br>    <span class="hljs-string">&quot;Kiwi&quot;</span>,<br>    <span class="hljs-string">&quot;Leamon&quot;</span>,<br>    <span class="hljs-string">&quot;Watermelon&quot;</span>,<br>    <span class="hljs-string">&quot;Strawberry&quot;</span>,<br>    <span class="hljs-string">&quot;Orange&quot;</span>,<br>    <span class="hljs-string">&quot;Apple&quot;</span>,<br>    <span class="hljs-string">&quot;Mango&quot;</span>,<br>    <span class="hljs-string">&quot;Banana&quot;</span>,<br>  ];<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruitsArr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;Peach&quot;</span>));<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruitsArr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;Banana&quot;</span>));<br>  <span class="hljs-comment">// false</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruitsArr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;sss&quot;</span>));<br>  <span class="hljs-comment">// false</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruitsArr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;Peach&quot;</span>, <span class="hljs-number">4</span>));<br>  <span class="hljs-comment">// true</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruitsArr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-number">1</span>));<br>&#125;<br><span class="hljs-title function_">arrayIncludesStr</span>();<br></code></pre></td></tr></table></figure>
+<h1 id="排序">排序</h1>
+<ul>
+<li>sort：对数组进行正向排序</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sortArray</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// [&#x27;Apple&#x27;, &#x27;Banana&#x27;, &#x27;Mango&#x27;, &#x27;Orange&#x27;];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruits=====&gt;&gt;&gt;&quot;</span>, fruits.<span class="hljs-title function_">sort</span>());<br>  <span class="hljs-comment">/* 生成10位整数 */</span><br>  <span class="hljs-keyword">const</span> strArr = [...<span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10000000000</span>)&#125;</span>`</span>];<br>  <span class="hljs-comment">// [&#x27;3&#x27;, &#x27;4&#x27;, &#x27;5&#x27;, &#x27;5&#x27;, &#x27;5&#x27;, &#x27;7&#x27;, &#x27;7&#x27;, &#x27;8&#x27;, &#x27;8&#x27;, &#x27;9&#x27;];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;strArr=====&gt;&gt;&gt;&quot;</span>, strArr.<span class="hljs-title function_">sort</span>());<br>&#125;;<br><span class="hljs-title function_">sortArray</span>();<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sortArray</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> strArr = [<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>];<br><br>  <span class="hljs-keyword">const</span> arr = strArr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> a - b;<br>  &#125;);<br>  <span class="hljs-comment">// [0, 1, 2, 3, 4, 6, 7, 8, 9, 10];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr=====&gt;&gt;&gt;&quot;</span>, arr);<br><br>  <span class="hljs-keyword">const</span> arr1 = strArr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> b - a;<br>  &#125;);<br>  <span class="hljs-comment">// [10, 9, 8, 7, 6, 4, 3, 2, 1, 0];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;arr1=====&gt;&gt;&gt;&quot;</span>, arr1);<br>&#125;;<br><span class="hljs-title function_">sortArray</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>reverse()：反转数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">reverserray</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br>  <span class="hljs-comment">// [&#x27;Mango&#x27;, &#x27;Apple&#x27;, &#x27;Orange&#x27;, &#x27;Banana&#x27;];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;fruits=====&gt;&gt;&gt;&quot;</span>, fruits.<span class="hljs-title function_">reverse</span>());<br>  <span class="hljs-keyword">const</span> strArr = [<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>];<br>  <span class="hljs-comment">// [7, 4, 3, 0, 9, 1, 6, 8, 10, 2];</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;strArr=====&gt;&gt;&gt;&quot;</span>, strArr.<span class="hljs-title function_">reverse</span>());<br>&#125;;<br><span class="hljs-title function_">reverserray</span>();<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Math.max(val)：参数 val 中最大的一个数字</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> strArr = [<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>];<br><span class="hljs-comment">// 10</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;max=====&gt;&gt;&gt;&quot;</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(...strArr));<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Math.min(val)：参数 val 中最小的一个数字</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> strArr = [<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>];<br><span class="hljs-comment">// 0</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;max=====&gt;&gt;&gt;&quot;</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">min</span>(...strArr));<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/web%E5%89%8D%E7%AB%AF/" class="category-chain-item">web前端</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/web%E5%89%8D%E7%AB%AF/" class="print-no-link">#web前端</a>
+      
+        <a href="/tags/javaScript/" class="print-no-link">#javaScript</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>js之Array的使用</div>
+      <div>https://www.gongyibai.site/Array/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>爱吃糖醋排骨的苏小妍.</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024-11-27 09:39:40</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024-12-16 16:00:28</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Number/" title="js之Number的使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">js之Number的使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E4%BD%BF%E7%94%A8git%E2%9E%95hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="使用git➕hexo发布博客">
+                        <span class="hidden-mobile">使用git➕hexo发布博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/common.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
