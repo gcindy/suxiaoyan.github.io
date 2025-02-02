@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/* 默认样式定义 */
+/** 内联代码 **/
+.markdown-body code, .markdown-body .code_color_5, .markdown-body .code_color_4, .markdown-body .code_color_3, .markdown-body .code_color_2, .markdown-body .code_color_1, .markdown-body .code_tips, .markdown-body .code_danger, .markdown-body .code_success, .markdown-body .code_warning, .markdown-body .code_info {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  font-size: inherit;
+}
+
+.code_info {
+  color: #6ca3e5 !important;
+  background-color: #dfeefd !important;
+}
+.code_warning {
+  color: #eabc18 !important;
+  background-color: #faf0d5 !important;
+}
+.code_success {
+  color: #88d622 !important;
+  background-color: #edf8db !important;
+}
+.code_danger {
+  color: #e75766 !important;
+  background-color: #fbe6e9 !important;
+}
+.code_tips {
+  color: #1dafba !important;
+  background-color: #eff0f0 !important;
+}
+.code_color_1 {
+  color: #262626 !important;
+  background-color: #daf7f8 !important;
+}
+.code_color_2 {
+  color: #262626 !important;
+  background-color: #e3f7ef !important;
+}
+.code_color_3 {
+  color: #262626 !important;
+  background-color: #fbeadc !important;
+}
+.code_color_4 {
+  color: #262626 !important;
+  background-color: #fbe1f0 !important;
+}
+.code_color_5 {
+  color: #262626 !important;
+  background-color: #ece4fb !important;
+}
+
+/** h1~h6 **/
+h1 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h1::before {
+  display: inline-block !important;
+}
+
+h2 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h2::before {
+  display: inline-block !important;
+}
+
+h3 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h3::before {
+  display: inline-block !important;
+}
+
+h4 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h4::before {
+  display: inline-block !important;
+}
+
+h5 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h5::before {
+  display: inline-block !important;
+}
+
+h6 {
+  border-bottom: 0.0625em solid var(--line-color);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-bottom: 0.4rem;
+}
+h6::before {
+  display: inline-block !important;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+h4 {
+  font-size: 1em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.67em;
+}
+
+/** 小圆点 **/
+.markdown-body ul li {
+  margin-top: 0;
+  list-style: none;
+}
+.markdown-body ul li p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.markdown-body ul > li::before {
+  width: 6px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--post-text-color);
+  display: inline-block;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.markdown-body ul > li ul li::before {
+  width: 6px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0.0625em solid var(--post-text-color);
+  display: inline-block;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.markdown-body ul > li ul li ul li {
+  margin-bottom: 0.5em;
+}
+.markdown-body ul > li ul li ul li::before {
+  width: 0.375em;
+  height: 0.375em;
+  content: "";
+  border-radius: 0;
+  background-color: transparent;
+  border: 0.0625em solid var(--post-text-color);
+  display: inline-block;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.markdown-body .shell,
+.markdown-body .markdown,
+.markdown-body .hljs,
+.markdown-body .hljs-number {
+  color: var(--post-text-color);
+}
+
+.footnotes {
+  border-top: 0.0625em dashed var(--sec-text-color);
+  padding-top: 1em;
+}
+
+.MathJax {
+  color: #df2a3f;
+  text-align: left !important;
+}
+
+mark {
+  color: #494949;
+  background-color: #fefcd9;
+}

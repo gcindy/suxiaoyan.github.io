@@ -1,0 +1,949 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="爱吃糖醋排骨的苏小妍.">
+  <meta name="keywords" content="代码笔墨">
+  
+    <meta name="description" content="图层移动  上移一层：command + [  下移一层：command + ]  置顶图层：shift + command + [  置底图层：shift + command + ]    快捷键  shift 单边等比缩放 shift + option 中心等比缩放  这里的快捷键是我自己自定义的  圆形：o 矩形：R 多边形：D 星形：S 直线：L 钢笔：P 选择工具：V 直接选择工具：A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adobe Illustrator">
+<meta property="og:url" content="https://www.gongyibai.site/adobeIllustrator/index.html">
+<meta property="og:site_name" content="代码笔墨">
+<meta property="og:description" content="图层移动  上移一层：command + [  下移一层：command + ]  置顶图层：shift + command + [  置底图层：shift + command + ]    快捷键  shift 单边等比缩放 shift + option 中心等比缩放  这里的快捷键是我自己自定义的  圆形：o 矩形：R 多边形：D 星形：S 直线：L 钢笔：P 选择工具：V 直接选择工具：A">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-27T03:07:02.000Z">
+<meta property="article:modified_time" content="2024-11-27T03:11:01.976Z">
+<meta property="article:author" content="爱吃糖醋排骨的苏小妍.">
+<meta property="article:tag" content="adobe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>adobe Illustrator - 代码笔墨</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.gongyibai.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>代码笔墨</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于我</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="adobe Illustrator"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        爱吃糖醋排骨的苏小妍.
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-27 11:07" pubdate>
+          2024,11,27 11:07
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          371 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">adobe Illustrator</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2024-11-27T11:11:01+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="图层移动">图层移动</h1>
+<ul>
+<li><p>上移一层：<kbd>command + [ </kbd></p></li>
+<li><p>下移一层：<kbd>command + ] </kbd></p></li>
+<li><p>置顶图层：<kbd>shift + command + [ </kbd></p></li>
+<li><p>置底图层：<kbd>shift + command + ] </kbd></p></li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/AI%20%E5%9B%BE%E5%B1%82%E7%A7%BB%E5%8A%A8.gif" srcset="/img/loading.gif" lazyload /></p>
+<h1 id="快捷键">快捷键</h1>
+<p><mark> shift 单边等比缩放<br/> shift + option 中心等比缩放
+</mark></p>
+<p><strong><em><font color="#aac397">这里的快捷键是我自己自定义的</font></em></strong></p>
+<ul>
+<li><p>圆形：<kbd>o</kbd></p></li>
+<li><p>矩形：<kbd>R</kbd></p></li>
+<li><p>多边形：<kbd>D</kbd></p></li>
+<li><p>星形：<kbd>S</kbd></p></li>
+<li><p>直线：<kbd>L</kbd></p></li>
+<li><p>钢笔：<kbd>P</kbd></p></li>
+<li><p>选择工具：<kbd>V</kbd></p></li>
+<li><p>直接选择工具：<kbd>A</kbd></p></li>
+<li><p>复制：<kbd>command + option</kbd></p></li>
+<li><p>魔棒工具：<kbd>Y</kbd></p></li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E9%AD%94%E6%A3%92.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>形状生成器：<kbd>shift + M</kbd></li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%BD%A2%E7%8A%B6%E7%94%9F%E6%88%90%E5%99%A8.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>剪刀：<kbd>C</kbd></li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%89%AA%E5%88%80%E5%B7%A5%E5%85%B7.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li><p>填充 / 描边位置互换：<kbd>X</kbd></p></li>
+<li><p>填充 / 描边颜色互换：<kbd>shiift + X</kbd></p></li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E9%A2%9C%E8%89%B2%E4%BA%92%E6%8D%A2.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li><p>变形：<mark>option + 鼠标左键按住不动上下滑：调整画笔硬度
+；option + 鼠标左键按住不动左右滑：调整画笔大小  </mark></p>
+<ul>
+<li>变形工具</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%8F%98%E5%BD%A2%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>宽度</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%AE%BD%E5%BA%A6.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>膨胀工具</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E8%86%A8%E8%83%80%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>缩拢工具</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E7%BC%A9%E6%8B%A2%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>旋转扭曲</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E6%97%8B%E8%BD%AC%E6%89%AD%E6%9B%B2.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>晶格化工具</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E6%99%B6%E6%A0%BC%E5%8C%96%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>扇贝工具</li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E6%89%87%E8%B4%9D%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video>
+<ul>
+<li>褶皱工具</li>
+</ul>
+<video width="100%" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E8%A4%B6%E7%9A%B1%E5%B7%A5%E5%85%B7.mp4">
+<p>您的浏览器不支持播放该视频!</p>
+</video></li>
+<li><p>Shaper：<kbd>shift + N</kbd></p></li>
+</ul>
+<video width="100%" controls="controls" src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/shaper.mp4">
+您的浏览器不支持播放该视频!
+</video>
+<ul>
+<li>倒角和反向圆角</li>
+</ul>
+<h1 id="路径查找器">路径查找器</h1>
+<blockquote>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ge4y1o7WB/?spm_id_from=333.337.search-card.all.click&amp;vd_source=9e2b5ef57e5911918f294f7c5d83e8d4">AI
+路径查找器</a></p>
+</blockquote>
+<ul>
+<li>联集</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E8%81%94%E9%9B%86.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>减去顶层</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%87%8F%E5%8E%BB%E9%A1%B6%E5%B1%82.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>交集</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E4%BA%A4%E9%9B%86.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>差集</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%B7%AE%E9%9B%86.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>合并</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%90%88%E5%B9%B6.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>修边</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E4%BF%AE%E8%BE%B9.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>裁剪</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E8%A3%81%E5%89%AA.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>轮廓</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E8%BD%AE%E5%BB%93.gif" srcset="/img/loading.gif" lazyload /></p>
+<ul>
+<li>减去后方对象</li>
+</ul>
+<p><img
+src="https://beautiful-folders-1256863744.cos.ap-nanjing.myqcloud.com/AI/%E5%87%8F%E5%8E%BB%E5%90%8E%E6%96%B9%E5%AF%B9%E8%B1%A1.gif" srcset="/img/loading.gif" lazyload /></p>
+<h1 id="other">Other</h1>
+<ul>
+<li>路径 - 描边轮廓化：放大缩小不模糊</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ui%E7%9F%A5%E8%AF%86/" class="category-chain-item">ui知识</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/adobe/" class="print-no-link">#adobe</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>adobe Illustrator</div>
+      <div>https://www.gongyibai.site/adobeIllustrator/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>爱吃糖醋排骨的苏小妍.</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024-11-27 11:07:02</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024-11-27 11:11:01</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/ui%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" title="ui相关知识">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ui相关知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/adobePhotoshop/" title="adobe Photoshop">
+                        <span class="hidden-mobile">adobe Photoshop</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/common.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
